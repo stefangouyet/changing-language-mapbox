@@ -27,10 +27,6 @@ const App = () => {
       "get",
       "name_" + e.value,
     ]);
-    await mapboxSource.setLayoutProperty("place-city-lg", "text-field", [
-      "get",
-      "name_" + e.value,
-    ]);
     await mapboxSource.setLayoutProperty(
       "marine-label-sm-pt",
       "text-field",
@@ -57,7 +53,7 @@ const App = () => {
         height="100vh"
         mapStyle="mapbox://styles/mapbox/light-v9"
         onViewportChange={setViewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_TOKEN}
+        mapboxApiAccessToken="pk.eyJ1Ijoic3RlZmFuZ291eWV0IiwiYSI6ImNscHF0dHhhNjAzeGoyam8wcTFqZjlnbW4ifQ.NbIIrM1ACugwdFe6_V2d3Q"
         ref={mapRef}
       />
       <Sidebar
