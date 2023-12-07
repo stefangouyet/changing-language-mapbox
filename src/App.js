@@ -19,6 +19,10 @@ const App = () => {
   const handleChangeMapLanguage = async (e) => {
     setMapLanguage(e.value);
     mapboxSource = await mapRef.current.getMap();
+
+    // Take a look at all layers that can be modified:
+    // console.log('Mapbox Layers:', mapboxSource.getStyle().layers)
+
     await mapboxSource.setLayoutProperty("country-label-lg", "text-field", [
       "get",
       "name_" + e.value,
